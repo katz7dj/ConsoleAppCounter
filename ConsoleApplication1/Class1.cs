@@ -8,7 +8,7 @@ namespace Program
 {
     class Class1
     {
-        int i = 0;
+        int i,j,k = 0;
         int valueInt = 4;
      //   Console.WriteLine(valueInt);
     }
