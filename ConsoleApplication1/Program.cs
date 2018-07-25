@@ -22,7 +22,7 @@ namespace ConsoleApplication1
     class DetaljiStudenta {
         public string imeStudenta;
         public int[] ocjenaStudenta = new int[5];
-        public int završnaOcjena;   
+        public int završnaOcjena;    
 
     }
 
