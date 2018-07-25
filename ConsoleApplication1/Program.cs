@@ -10,16 +10,29 @@ namespace ConsoleApplication1
     class Program
     {
         static void Main(string[] args)
-        {    
-            Console.WriteLine("sfadsa");
-            Console.ReadLine();
-            Console.WriteLine("testing");
-            Console.WriteLine("testing");
-            Console.ReadLine();
-            Console.ReadLine();
+        {
+            Console.WriteLine("_______________________________________________________________");
+
         }
 
+    }
+
+
+
+    class DetaljiStudenta {
+        public string imeStudenta;
+        public int[] ocjenaStudenta = new int[5];
+        public int završnaOcjena;
+
+    }
+
+    class Student {
+        public List<DetaljiStudenta> listaStudenata = new List<DetaljiStudenta>();
+
+        public int MaksimalanBroj;
+
+    }
 
 
     }
-}
+
