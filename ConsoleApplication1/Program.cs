@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static Program.Class1;
+using static ConsoleApplication1.DetaljiStudenta;
+using static ConsoleApplication1.Student;
 
 namespace ConsoleApplication1
 {
@@ -12,13 +13,59 @@ namespace ConsoleApplication1
 
         static public Student student = new Student();
 
+        static void Main(string[] args)
+        {
+            //
+
+            Console.Write("Unesite ukupan broj studenata: ");
+
+            string s = Console.ReadLine();
+            if (IsNumeric(s))
+            {
+                Izracun(s);        //  }
+            }
+            else {
+                Console.Write("Unesite numeričku vrijednost: ");
+                
+
+            }
+            
+        }
+
+
+        private static bool IsNumeric(string input)
+        {
+            int test;
+            return int.TryParse(input, out test);
+        }
+
+        static public void Izracun(string s) {
+            int brojStudenata = -1;
+
+            brojStudenata = Convert.ToInt32(s);
+            for (int i = 1; i <= brojStudenata; i++)
+            {
+                Console.WriteLine("\nUnesite informacije za studenta " + i.ToString() + ":");
+
+                unosZapisa();
+
+            }
+
+            PregledZapisa();
+            char ch = Console.ReadKey().KeyChar;
+
+
+
+
+        }
+
         static public void PregledZapisa()
         {
             Console.WriteLine("____________________");
 
 
 
-            Console.WriteLine("SNo Student Name        ENG   MAT   FIZ   KEM    BIO     Total");
+            Console.WriteLine("Ime                     ENG   MAT   FIZ   KEM    BIO     Prosjek");
 
             Console.WriteLine("__________");
 
@@ -39,7 +86,7 @@ namespace ConsoleApplication1
 
                 Console.Write("{0, -7}", student.listaStudenata[i].ocjenaStudenta[4]);
 
-                Console.Write("{0, -7}", student.listaStudenata[i].završnaOcjena);
+                Console.Write("{0, -8}", student.listaStudenata[i].završnaOcjena);
 
                 Console.WriteLine();
 
@@ -48,28 +95,7 @@ namespace ConsoleApplication1
 
         }
 
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Student MarkList Application");
 
-            Console.Write("Unesite ukupan broj studenata: ");
-
-            int brojStudenata = -1;
-            string s = Console.ReadLine();
-
-            brojStudenata = Convert.ToInt32(s);
-
-            for (int i = 1; i <= brojStudenata; i++)
-            {
-                Console.WriteLine("\nEnter " + i.ToString() + " Student Information\n");
-
-                unosZapisa();
-
-            }
-
-            PregledZapisa();
-            char ch = Console.ReadKey().KeyChar;
-        }
 
 
         static void unosZapisa()
@@ -77,14 +103,22 @@ namespace ConsoleApplication1
             Console.Write("Ime studenta:");
             string ime;
             int[] ocjene = new int[5];
-
+            string[] predmeti = new string[5] { "ENG", "MAT", "FIZ", "KEM" ,"BIO" };
             ime = Console.ReadLine();
+            int j = -1;
 
             for (int i = 1; i <= 5; i++)
             {
-                Console.Write("Predmet 1" + i.ToString() + "ocjena: ");
-                ocjene[i-1] = Convert.ToInt32(Console.ReadLine());
+                j++;
 
+               // for (int j = 0; j <= 4; j++) {
+                 //   predmeti[j];
+               // }
+
+
+                Console.Write("Predmet " + i.ToString() + ", " + predmeti[j] + " ocjena: ");
+                ocjene[i - 1] = Convert.ToInt32(Console.ReadLine());
+            
 
             }
 
@@ -95,42 +129,9 @@ namespace ConsoleApplication1
 
 
 
-    class DetaljiStudenta {
-        public string imeStudenta;
-        public int[] ocjenaStudenta = new int[5];
-        public int završnaOcjena;    
-
-    }
-
-    class Student {
-        public List<DetaljiStudenta> listaStudenata = new List<DetaljiStudenta>();
-
-        public int MaksimalanBroj;
 
 
-        public int dodajZapis(string ime, int[] ocjena) {
-
-            DetaljiStudenta stud = new DetaljiStudenta();
-
-            stud.imeStudenta = ime;
-            stud.ocjenaStudenta = ocjena;
-            stud.završnaOcjena = 0;
-
-            for (int i = 0; i < 5; i++)
-            {
-
-                stud.završnaOcjena += stud.ocjenaStudenta[i];
-                listaStudenata.Add(stud);
-                MaksimalanBroj = listaStudenata.Count;
-
-
-            }
-
-
-            return 1;
-        }
-
-    }
+    
 
 
     }
