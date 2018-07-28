@@ -54,7 +54,8 @@ namespace ConsoleApplication1
             }
 
             PregledZapisa();
-            char ch = Console.ReadKey().KeyChar;
+            // char ch = Console.ReadKey().KeyChar;
+            System.Threading.Thread.Sleep(10000);
 
 
 
