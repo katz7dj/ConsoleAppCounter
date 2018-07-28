@@ -10,7 +10,7 @@ namespace ConsoleApplication1
     {
         public string imeStudenta;
         public int[] ocjenaStudenta = new int[5];
-        public int završnaOcjena;
+        public float završnaOcjena;
 
     }
 }

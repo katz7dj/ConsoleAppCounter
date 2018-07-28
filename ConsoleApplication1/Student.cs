@@ -28,6 +28,7 @@ namespace ConsoleApplication1
                 stud.završnaOcjena += stud.ocjenaStudenta[i];
                 listaStudenata.Add(stud);
                 MaksimalanBroj = listaStudenata.Count;
+            stud.završnaOcjena = stud.završnaOcjena / 5;
 
 
             //}

@@ -24,12 +24,15 @@ namespace ConsoleApplication1
             {
                 Izracun(s);        //  }
             }
-            else {
+            else
+            {
                 Console.Write("Unesite numeričku vrijednost: ");
-                
-
+                string s1 = Console.ReadLine();
+                if (IsNumeric(s1)) { 
+                Izracun(s1);
             }
-            
+            }
+
         }
 
 
