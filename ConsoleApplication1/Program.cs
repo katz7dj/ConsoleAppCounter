@@ -15,14 +15,13 @@ namespace ConsoleApplication1
 
         static void Main(string[] args)
         {
-            //
 
             Console.Write("Unesite ukupan broj studenata: ");
 
             string s = Console.ReadLine();
             if (IsNumeric(s))
             {
-                Izracun(s);        //  }
+                Izracun(s);        
             }
             else
             {
@@ -113,11 +112,6 @@ namespace ConsoleApplication1
             for (int i = 1; i <= 5; i++)
             {
                 j++;
-
-               // for (int j = 0; j <= 4; j++) {
-                 //   predmeti[j];
-               // }
-
 
                 Console.Write("Predmet " + i.ToString() + ", " + predmeti[j] + " ocjena: ");
                 ocjene[i - 1] = Convert.ToInt32(Console.ReadLine());
